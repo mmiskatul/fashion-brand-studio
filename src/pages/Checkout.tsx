@@ -30,7 +30,7 @@ export default function Checkout() {
     setSubmitting(true);
     try {
       const res = await orderService.create({
-        customer: data,
+        customer: data as any,
         items: items.map((i) => ({ productId: i.productId, name: i.name, image: i.image, color: i.color, size: i.size, quantity: i.quantity, price: i.price })),
         subtotal: subtotal(),
         discount: discount(),
